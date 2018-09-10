@@ -1,0 +1,252 @@
+un program 3.1 and observe the results for different number of processes
+
+./forkprob1 1
+		
+		i:1 process ID:28563 parent ID:28335 child ID:0
+
+		
+./forkprob1 4
+		i:1 process ID:28725 parent ID:28335 child ID:28726
+		i:2 process ID:28726 parent ID:1 child ID:28727
+		i:3 process ID:28727 parent ID:28726 child ID:28728
+		i:4 process ID:28728 parent ID:28727 child ID:0
+
+		
+./forkprob1 8
+
+		i:1 process ID:28760 parent ID:28335 child ID:28761
+		i:2 process ID:28761 parent ID:1 child ID:28762
+		i:3 process ID:28762 parent ID:28761 child ID:28763
+		i:4 process ID:28763 parent ID:28762 child ID:28764
+		i:5 process ID:28764 parent ID:28763 child ID:28765
+		i:6 process ID:28765 parent ID:1 child ID:28766
+		i:7 process ID:28766 parent ID:28765 child ID:28767
+		i:8 process ID:28767 parent ID:28766 child ID:0
+		
+		
+./forkprob1 16
+
+		i:1 process ID:28845 parent ID:28335 child ID:28846
+		i:2 process ID:28846 parent ID:28845 child ID:28847
+		i:3 process ID:28847 parent ID:1 child ID:28848
+		i:4 process ID:28848 parent ID:28847 child ID:28849
+		i:5 process ID:28849 parent ID:28848 child ID:28850
+		i:6 process ID:28850 parent ID:1 child ID:28851
+		i:7 process ID:28851 parent ID:1 child ID:28852
+		i:8 process ID:28852 parent ID:28851 child ID:28853
+		i:9 process ID:28853 parent ID:28852 child ID:28854
+		i:10 process ID:28854 parent ID:1 child ID:28855
+		i:11 process ID:28855 parent ID:28854 child ID:28856
+		i:12 process ID:28856 parent ID:28855 child ID:28857
+		i:13 process ID:28857 parent ID:1 child ID:28858
+		i:14 process ID:28858 parent ID:28857 child ID:28859
+		i:16 process ID:28860 parent ID:28859 child ID:0
+		i:15 process ID:28859 parent ID:1 child ID:28860
+		
+
+./forkprob1 32
+
+		i:1 process ID:30007 parent ID:29369 child ID:30008
+		i:2 process ID:30008 parent ID:1 child ID:30009
+		i:3 process ID:30009 parent ID:1 child ID:30010
+		i:4 process ID:30010 parent ID:1 child ID:30011
+		i:5 process ID:30011 parent ID:30010 child ID:30012
+		i:6 process ID:30012 parent ID:30011 child ID:30013
+		i:7 process ID:30013 parent ID:1 child ID:30014
+		i:8 process ID:30014 parent ID:30013 child ID:30015
+		i:9 process ID:30015 parent ID:30014 child ID:30016
+		i:10 process ID:30016 parent ID:1 child ID:30017
+		i:11 process ID:30017 parent ID:30016 child ID:30018
+		i:12 process ID:30018 parent ID:1 child ID:30019
+		i:13 process ID:30019 parent ID:30018 child ID:30020
+		i:14 process ID:30020 parent ID:30019 child ID:30021
+		i:15 process ID:30021 parent ID:1 child ID:30022
+		i:16 process ID:30022 parent ID:30021 child ID:30023
+		i:17 process ID:30023 parent ID:1 child ID:30024
+		i:18 process ID:30024 parent ID:30023 child ID:30025
+		i:19 process ID:30025 parent ID:30024 child ID:30026
+		i:20 process ID:30026 parent ID:1 child ID:30027
+		i:21 process ID:30027 parent ID:1 child ID:30028
+		i:22 process ID:30028 parent ID:30027 child ID:30029
+		i:23 process ID:30029 parent ID:30028 child ID:30030
+		i:24 process ID:30030 parent ID:1 child ID:30031
+		i:25 process ID:30031 parent ID:1 child ID:30032
+		i:26 process ID:30032 parent ID:30031 child ID:30033
+		i:27 process ID:30033 parent ID:30032 child ID:30034
+		i:28 process ID:30034 parent ID:30033 child ID:30035
+		i:29 process ID:30035 parent ID:30034 child ID:30036
+		i:30 process ID:30036 parent ID:30035 child ID:30037
+		i:31 process ID:30037 parent ID:30036 child ID:30038
+		i:32 process ID:30038 parent ID:30037 child ID:0
+		
+
+2. Fill in the actual process IDs of the processes in the diagram 3.2 for a run 
+with a command line argument 4
+
+./forkprob1 4
+
+30408
+|
+|
+30409
+|
+|
+30410
+|
+|
+30411
+
+
+3. 
+
+[bachina@hoare7 os-assignment1]$ ./prob1 4
+i:1 process ID:8651 parent ID:24799 child ID:8652
+i:2 process ID:8652 parent ID:1 child ID:8653
+i:3 process ID:8653 parent ID:1 child ID:8654
+i:4 process ID:8654 parent ID:8653 child ID:0
+
+InputGiven (n)  Processes Owned by Init    
+4					2
+8					4
+16					7
+32					11
+45					17
+
+
+
+4. Place sleep(10); directly before the final fprintf statement in Program 3.1. what is the maximum number of processes generated in this case. 
+
+InputGiven(n)	Processes owned by init 	Total Processes generated
+
+2				1							2
+4				1							4
+8				2							8
+16				10							16
+20				12							20
+25				16							25
+32				17							28						
+38				13							28
+
+
+
+5. Put a loop around the final fprintf in program 3.1. Have the loop execute k times
+Put sleep(m) inside the loop after the fprintf. Pass k and m on the command line. Run the program for several
+values of n,k, and m. Observe the results.
+
+./forkprob5 -n2 -k4 -m8
+i:1 process ID:23108 parent ID:4005 child ID:23111
+i:2 process ID:23111 parent ID:23108 child ID:0
+i:2 process ID:23111 parent ID:23108 child ID:0
+i:1 process ID:23108 parent ID:4005 child ID:23111
+i:2 process ID:23111 parent ID:23108 child ID:0
+i:1 process ID:23108 parent ID:4005 child ID:23111
+i:1 process ID:23108 parent ID:4005 child ID:23111
+i:2 process ID:23111 parent ID:23108 child ID:0
+
+====================================================
+./forkprob5 -n2 -k5 -m10
+i:1 process ID:21686 parent ID:4005 child ID:21690
+i:2 process ID:21690 parent ID:21686 child ID:0
+i:1 process ID:21686 parent ID:4005 child ID:21690
+i:2 process ID:21690 parent ID:21686 child ID:0
+i:1 process ID:21686 parent ID:4005 child ID:21690
+i:2 process ID:21690 parent ID:21686 child ID:0
+i:1 process ID:21686 parent ID:4005 child ID:21690
+i:2 process ID:21690 parent ID:21686 child ID:0
+i:1 process ID:21686 parent ID:4005 child ID:21690
+i:2 process ID:21690 parent ID:21686 child ID:0
+
+
+================================================================
+
+
+./forkprob5 -n4 -k7 -m15
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:3 process ID:22562 parent ID:22561 child ID:22564
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:3 process ID:22562 parent ID:22561 child ID:22564
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:3 process ID:22562 parent ID:22561 child ID:22564
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:3 process ID:22562 parent ID:22561 child ID:22564
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:3 process ID:22562 parent ID:22561 child ID:22564
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:3 process ID:22562 parent ID:22561 child ID:22564
+i:1 process ID:22556 parent ID:4005 child ID:22561
+i:2 process ID:22561 parent ID:22556 child ID:22562
+i:4 process ID:22564 parent ID:22562 child ID:0
+i:3 process ID:22562 parent ID:22561 child ID:22564
+=======================================================
+
+
+[bachina@hoare7 os-assignment1]$ ./prob5 -n2 -k2 -m10
+i:1 process ID:23448 parent ID:23132 child ID:23449
+i:2 process ID:23449 parent ID:23448 child ID:0
+i:1 process ID:23448 parent ID:23132 child ID:23449
+i:2 process ID:23449 parent ID:23448 child ID:0
+[bachina@hoare7 os-assignment1]$ ./prob5 -n2 -k4 -m10
+i:1 process ID:23534 parent ID:23132 child ID:23535
+i:2 process ID:23535 parent ID:23534 child ID:0
+i:1 process ID:23534 parent ID:23132 child ID:23535
+i:2 process ID:23535 parent ID:23534 child ID:0
+i:1 process ID:23534 parent ID:23132 child ID:23535
+i:2 process ID:23535 parent ID:23534 child ID:0
+i:1 process ID:23534 parent ID:23132 child ID:23535
+i:2 process ID:23535 parent ID:23534 child ID:0
+[bachina@hoare7 os-assignment1]$ ./prob5 -n4 -k4 -m10
+i:1 process ID:23769 parent ID:23132 child ID:23770
+i:2 process ID:23770 parent ID:23769 child ID:23771
+i:3 process ID:23771 parent ID:23770 child ID:23772
+i:4 process ID:23772 parent ID:23771 child ID:0
+i:1 process ID:23769 parent ID:23132 child ID:23770
+i:2 process ID:23770 parent ID:23769 child ID:23771
+i:3 process ID:23771 parent ID:23770 child ID:23772
+i:4 process ID:23772 parent ID:23771 child ID:0
+i:1 process ID:23769 parent ID:23132 child ID:23770
+i:2 process ID:23770 parent ID:23769 child ID:23771
+i:3 process ID:23771 parent ID:23770 child ID:23772
+i:4 process ID:23772 parent ID:23771 child ID:0
+i:1 process ID:23769 parent ID:23132 child ID:23770
+i:2 process ID:23770 parent ID:23769 child ID:23771
+i:3 process ID:23771 parent ID:23770 child ID:23772
+i:4 process ID:23772 parent ID:23771 child ID:0
+
+
+
+
+6. Modify Program 3.1 by putting a wait function call before the final fprintf statement. 
+How Does this affect the output of the program?
+
+
+
+
+
+
+7.
+
+[bachina@hoare7 os-assignment1]$ ./forkprob7 2
+i:1 process ID: 18849 parent ID: 4005 child ID: 18855
+i:2 process ID: 18855 parent ID: 1 child ID: 0
+
+
+[bachina@hoare7 os-assignment1]$ ./forkprob7 6
+i:1 process ID: 21443 parent ID: 4005 child ID: 21446
+i:2 process ID: 21446 parent ID: 1 child ID: 21447
+i:3 process ID: 21447 parent ID: 1 child ID: 21449
+[bachina@hoare7 os-assignment1]$ i:4 process ID: 21449 parent ID: 1 child ID: 21450
+i:5 process ID: 21450 parent ID: 1 child ID: 21452
+i:6 process ID: 21452 parent ID: 1 child ID: 0
+

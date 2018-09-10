@@ -1,0 +1,28 @@
+tructure in hoare server is 
+		
+		os-assignment1  --->   Makefile
+							   src
+							   Readme
+							   Answers.txt
+							 
+
+In src folder, I have created 6 files. 
+	
+	Forkmain.c is the solution for problem that is mentioned in pdf. 
+	prob1.c - solution for 1,2,3 in 3.8
+	prob4.c - solution for problem 4 in 3.8
+	prob5.c - solution for problem 5
+	prob6.c - solution for problem 6
+	prob7.c - solution for problem 7
+	prob8.c - solution for problem 8
+	
+	
+To run the project cd to os-assignment1 folder: make all
+
+All the executables will be generated 
+
+./ass1 -n processcount or ./ass1 -h or ./ass1 -p for the pdf problem
+
+./prob1 processcount - #prob1
+
+To remove object files: make clean

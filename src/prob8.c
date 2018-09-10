@@ -7,7 +7,7 @@ int i,j, n, x,k,m;
 int nchars;
 if (argc < 2){ /* check for valid number of command-line arguments */
 fprintf(stderr, "This program requires the arguments in the below format");
-fprintf(stderr,"Usage: %s -n processes -k loop iteration -m sleeptime", argv[1]);
+fprintf(stderr,"Usage: %s -n processes -m charactercount", argv[1]);
 return 1;
 }
 
@@ -24,6 +24,12 @@ default:
 	fprintf(stderr, "Use: %s -n processes -m charactercount", argv[1]);
 }
 char mybuf[nchars];
+if(n<1 || nchars<1)
+{
+fprintf(stderr, "One of the following arguments is invalid \n");
+fprintf(stderr, "Usage: %s -n processcount -m charactercount \n", argv[1]);
+return 1;
+}
 //fprintf(stderr, "%d, %d",nchars, n);
 
 //n = atoi(argv[1]);
