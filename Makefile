@@ -1,5 +1,5 @@
 CC = gcc
-
+#COMPILERFLAGS = -g
 SRCDIRECTORY = src
 TARGET = ass1 prob4 prob1 prob5 prob6 prob7 prob8
 all: $(TARGET)

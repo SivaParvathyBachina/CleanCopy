@@ -1,18 +1,18 @@
 un program 3.1 and observe the results for different number of processes
 
-./forkprob1 1
+[bachina@hoare7 os-assignment1]$: ./prob1 1
 		
 		i:1 process ID:28563 parent ID:28335 child ID:0
 
 		
-./forkprob1 4
+[bachina@hoare7 os-assignment1]$: ./prob1 4
 		i:1 process ID:28725 parent ID:28335 child ID:28726
 		i:2 process ID:28726 parent ID:1 child ID:28727
 		i:3 process ID:28727 parent ID:28726 child ID:28728
 		i:4 process ID:28728 parent ID:28727 child ID:0
 
 		
-./forkprob1 8
+[bachina@hoare7 os-assignment1]$: ./prob1 8
 
 		i:1 process ID:28760 parent ID:28335 child ID:28761
 		i:2 process ID:28761 parent ID:1 child ID:28762
@@ -24,7 +24,7 @@ un program 3.1 and observe the results for different number of processes
 		i:8 process ID:28767 parent ID:28766 child ID:0
 		
 		
-./forkprob1 16
+[bachina@hoare7 os-assignment1]$: ./prob1 16
 
 		i:1 process ID:28845 parent ID:28335 child ID:28846
 		i:2 process ID:28846 parent ID:28845 child ID:28847
@@ -44,7 +44,7 @@ un program 3.1 and observe the results for different number of processes
 		i:15 process ID:28859 parent ID:1 child ID:28860
 		
 
-./forkprob1 32
+[bachina@hoare7 os-assignment1]$: ./prob1 32
 
 		i:1 process ID:30007 parent ID:29369 child ID:30008
 		i:2 process ID:30008 parent ID:1 child ID:30009
@@ -83,7 +83,7 @@ un program 3.1 and observe the results for different number of processes
 2. Fill in the actual process IDs of the processes in the diagram 3.2 for a run 
 with a command line argument 4
 
-./forkprob1 4
+./prob1 4
 
 30408
 |
@@ -99,19 +99,12 @@ with a command line argument 4
 
 3. 
 
-[bachina@hoare7 os-assignment1]$ ./prob1 4
-i:1 process ID:8651 parent ID:24799 child ID:8652
-i:2 process ID:8652 parent ID:1 child ID:8653
-i:3 process ID:8653 parent ID:1 child ID:8654
-i:4 process ID:8654 parent ID:8653 child ID:0
-
-InputGiven (n)  Processes Owned by Init    
-4					2
-8					4
-16					7
-32					11
-45					17
-
+InputGiven (n)  Processes Owned by Init    	Fraction Adopted by Init Vs. Total			Fraction Adopted by init Vs. Program owned
+4					2						50%												100%
+8					4						50%												100%
+16					7						43%												63.6%
+32					11						34.3%											52.3%
+45					17						37.7%											60.7%
 
 
 4. Place sleep(10); directly before the final fprintf statement in Program 3.1. what is the maximum number of processes generated in this case. 
@@ -133,70 +126,15 @@ InputGiven(n)	Processes owned by init 	Total Processes generated
 Put sleep(m) inside the loop after the fprintf. Pass k and m on the command line. Run the program for several
 values of n,k, and m. Observe the results.
 
-./forkprob5 -n2 -k4 -m8
-i:1 process ID:23108 parent ID:4005 child ID:23111
-i:2 process ID:23111 parent ID:23108 child ID:0
-i:2 process ID:23111 parent ID:23108 child ID:0
-i:1 process ID:23108 parent ID:4005 child ID:23111
-i:2 process ID:23111 parent ID:23108 child ID:0
-i:1 process ID:23108 parent ID:4005 child ID:23111
-i:1 process ID:23108 parent ID:4005 child ID:23111
-i:2 process ID:23111 parent ID:23108 child ID:0
-
-====================================================
-./forkprob5 -n2 -k5 -m10
-i:1 process ID:21686 parent ID:4005 child ID:21690
-i:2 process ID:21690 parent ID:21686 child ID:0
-i:1 process ID:21686 parent ID:4005 child ID:21690
-i:2 process ID:21690 parent ID:21686 child ID:0
-i:1 process ID:21686 parent ID:4005 child ID:21690
-i:2 process ID:21690 parent ID:21686 child ID:0
-i:1 process ID:21686 parent ID:4005 child ID:21690
-i:2 process ID:21690 parent ID:21686 child ID:0
-i:1 process ID:21686 parent ID:4005 child ID:21690
-i:2 process ID:21690 parent ID:21686 child ID:0
-
-
-================================================================
-
-
-./forkprob5 -n4 -k7 -m15
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:3 process ID:22562 parent ID:22561 child ID:22564
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:3 process ID:22562 parent ID:22561 child ID:22564
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:3 process ID:22562 parent ID:22561 child ID:22564
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:3 process ID:22562 parent ID:22561 child ID:22564
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:3 process ID:22562 parent ID:22561 child ID:22564
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:3 process ID:22562 parent ID:22561 child ID:22564
-i:1 process ID:22556 parent ID:4005 child ID:22561
-i:2 process ID:22561 parent ID:22556 child ID:22562
-i:4 process ID:22564 parent ID:22562 child ID:0
-i:3 process ID:22562 parent ID:22561 child ID:22564
-=======================================================
-
+The number of processes n will be looped for k times with the mentioned sleep time. 
 
 [bachina@hoare7 os-assignment1]$ ./prob5 -n2 -k2 -m10
 i:1 process ID:23448 parent ID:23132 child ID:23449
 i:2 process ID:23449 parent ID:23448 child ID:0
 i:1 process ID:23448 parent ID:23132 child ID:23449
 i:2 process ID:23449 parent ID:23448 child ID:0
+
+
 [bachina@hoare7 os-assignment1]$ ./prob5 -n2 -k4 -m10
 i:1 process ID:23534 parent ID:23132 child ID:23535
 i:2 process ID:23535 parent ID:23534 child ID:0
@@ -206,6 +144,9 @@ i:1 process ID:23534 parent ID:23132 child ID:23535
 i:2 process ID:23535 parent ID:23534 child ID:0
 i:1 process ID:23534 parent ID:23132 child ID:23535
 i:2 process ID:23535 parent ID:23534 child ID:0
+
+
+
 [bachina@hoare7 os-assignment1]$ ./prob5 -n4 -k4 -m10
 i:1 process ID:23769 parent ID:23132 child ID:23770
 i:2 process ID:23770 parent ID:23769 child ID:23771
@@ -230,23 +171,78 @@ i:4 process ID:23772 parent ID:23771 child ID:0
 6. Modify Program 3.1 by putting a wait function call before the final fprintf statement. 
 How Does this affect the output of the program?
 
+[bachina@hoare7 os-assignment1]$ ./prob6 4
+i:4 process ID:24731 parent ID:24730 child ID:0
+i:3 process ID:24730 parent ID:24729 child ID:24731
+i:2 process ID:24729 parent ID:24728 child ID:24730
+i:1 process ID:24728 parent ID:2361 child ID:24729
 
-
-
+By putting wait(), every parent process will wait for its child to execute completely. After the child is executed 
+parent will execute.
 
 
 7.
 
-[bachina@hoare7 os-assignment1]$ ./forkprob7 2
+[bachina@hoare7 os-assignment1]$ ./prob7 2
 i:1 process ID: 18849 parent ID: 4005 child ID: 18855
 i:2 process ID: 18855 parent ID: 1 child ID: 0
 
 
-[bachina@hoare7 os-assignment1]$ ./forkprob7 6
+[bachina@hoare7 os-assignment1]$ ./prob7 6
 i:1 process ID: 21443 parent ID: 4005 child ID: 21446
 i:2 process ID: 21446 parent ID: 1 child ID: 21447
 i:3 process ID: 21447 parent ID: 1 child ID: 21449
 [bachina@hoare7 os-assignment1]$ i:4 process ID: 21449 parent ID: 1 child ID: 21450
 i:5 process ID: 21450 parent ID: 1 child ID: 21452
 i:6 process ID: 21452 parent ID: 1 child ID: 0
+
+
+[bachina@hoare7 os-assignment1]$ ./prob7 10
+i:1 process ID: 26767 parent ID: 2361 child ID: 26768
+i:2 process ID: 26768 parent ID: 1 child ID: 26769
+i:3 process ID: 26769 parent ID: 1 child ID: 26770
+i:4 process ID: 26770 parent ID: 26769 child ID: 26771
+[bachina@hoare7 os-assignment1]$ i:5 process ID: 26771 parent ID: 1 child ID: 26772
+i:6 process ID: 26772 parent ID: 1 child ID: 26773
+i:7 process ID: 26773 parent ID: 1 child ID: 26774
+i:8 process ID: 26774 parent ID: 26773 child ID: 26775
+i:9 i:10 process ID: 26775 process ID: 26776 parent ID: 26775 parent ID: 1 child ID: 0
+
+
+We cannot say which process is generating the output, because it depends on the scheduler pick up policy. 
+
+
+
+8.  
+[bachina@hoare7 os-assignment1]$ ./prob8 -n 2 -m 4
+Please Enter the character 1, 26391
+e
+buffer value at 1, e
+Please Enter the character 2, 26391
+r
+buffer value at 2, r
+Please Enter the character 3, 26391
+f
+buffer value at 3, f
+Please Enter the character 4, 26391
+g
+buffer value at 4, g
+Process ID: 26391, erfg
+Please Enter the character 1, 26390
+l
+buffer value at 1, l
+Please Enter the character 2, 26390
+k
+buffer value at 2, k
+Please Enter the character 3, 26390
+m
+buffer value at 3, m
+Please Enter the character 4, 26390
+n
+buffer value at 4, n
+Process ID: 26390, lkmn
+
+The getopt program is reused here to take the command line arguments. 
+The processes will execute randomnly based on the CPU scheduler pick up. Each process is being interrupted, SO a wait call inserted between the two for loops will make the program
+execute one by one for each process.
 

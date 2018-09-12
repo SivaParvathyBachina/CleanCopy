@@ -3,7 +3,7 @@
 #include <unistd.h>
 int main (int argc, char *argv[]) {
 pid_t childpid = 0;
-int i,j, n, x,k,m;
+int i,j, n, x,m;
 int nchars;
 if (argc < 2){ /* check for valid number of command-line arguments */
 fprintf(stderr, "This program requires the arguments in the below format");
@@ -19,24 +19,22 @@ case 'n':
 	break;
 case 'm': 
 	nchars = atoi(optarg);
-	break; 
+	break;
+case '?': 
+	fprintf(stderr, "Usage: %s -n processes -m charactercount \n", argv[1]);
+	return 1; 
 default: 
-	fprintf(stderr, "Use: %s -n processes -m charactercount", argv[1]);
+	fprintf(stderr, "Use: %s -n processes -m charactercount \n", argv[1]);
+	return 1;
 }
-char mybuf[nchars];
-if(n<1 || nchars<1)
-{
-fprintf(stderr, "One of the following arguments is invalid \n");
-fprintf(stderr, "Usage: %s -n processcount -m charactercount \n", argv[1]);
-return 1;
-}
-//fprintf(stderr, "%d, %d",nchars, n);
 
-//n = atoi(argv[1]);
+char mybuf[nchars];
+
 for(i=1; i< n; i++) {
 if (childpid = fork())
 break;
 }
+
 wait();
 
 j=1;

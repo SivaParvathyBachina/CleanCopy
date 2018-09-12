@@ -26,12 +26,10 @@ default:
 	fprintf(stderr, "Use: %s -n processes -k loop iteration -m sleeptime", argv[1]);
 }
 
-//fprintf(stderr, "%d, %d, %d", n,k,m);
-
-//n = atoi(argv[1]);
 for (i = 1; i < n; i++)
 if (childpid = fork())
 break;
+
 for(j=0; j<k; j++)
 {
 fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
