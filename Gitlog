@@ -1,0 +1,19 @@
+-assignment1]$ git log
+commit 883ebb74d8ce52e7cd8ef67fb627b6d93a25d939
+Author: siva bachina <bachina@hoare7.cs.umsl.edu>
+Date:   Wed Sep 12 15:21:47 2018 -0500
+
+    modified a couple of programs
+
+commit 8bb12306434b2c9dd526b32f31243de6e961d277
+Author: siva bachina <bachina@hoare7.cs.umsl.edu>
+Date:   Mon Sep 10 01:04:50 2018 -0500
+
+    Added Answers and ReadME
+
+commit 91f3ddbe96052c8308314e1cb7ff044b90f4d7c7
+Author: siva bachina <bachina@hoare7.cs.umsl.edu>
+Date:   Sun Sep 9 22:58:19 2018 -0500
+
+    Operating systems Assignment 1
+

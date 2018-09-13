@@ -1,6 +1,6 @@
-tructure in hoare server is 
+The structure in hoare server is 
 		
-		os-assignment1  --->   Makefile
+		bachina.1  --->   Makefile
 							   src
 							   Readme
 							   Answers.txt
@@ -17,12 +17,18 @@ In src folder, I have created 6 files.
 	prob8.c - solution for problem 8
 	
 	
-To run the project cd to os-assignment1 folder: make all
+To run the project cd to bachina.1 folder: make all
 
 All the executables will be generated 
 
 ./ass1 -n processcount or ./ass1 -h or ./ass1 -p for the pdf problem
 
 ./prob1 processcount - #prob1
+
+For Prob5 ./prob5 -n processcount -k loopcount -m sleeptime
+	--- ./prob5 -n2 -k4 -m10
+
+For prob 8 ./prob8 -n processes - m charactercount
+	--- ./prob8 -n2 -m4
 
 To remove object files: make clean
