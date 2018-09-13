@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <errno.h>
 
 int main (int argc, char *argv[]) {
 pid_t childpid = 0;
@@ -17,10 +18,8 @@ while((x = getopt(argc,argv, "phn:")) != -1)
 switch(x)
 {
 case 'p':
-       // strcpy(secondpart, argv[0]); // Program name is being stored in a string
-	//strcpy(firstpart, " MyError: Detailed Error");  //The error is being stored in another string
-	//strcat(secondpart, firstpart);   // concatenated whole string to pass as one single parameter to the perror function
-       snprintf(errorstring, 100, "%s User Error: Dont have access for this operation \n", argv[0]);
+       	errno = ENXIO;
+       	 snprintf(errorstring, 100, "%s: Error", argv[0]);
 	 perror(errorstring);
         return 1;
 case 'h':
